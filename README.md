@@ -5,6 +5,7 @@ Welcome to this Log Maker.
 Just download the file and write `python main.py` in your terminal where the file is located to generate a log.md as this [example](log.md).
 
 ### Usage:
+```
 usage: main.py [-h] [-o] [-f FILE] [date]
 
 positional arguments:
@@ -15,6 +16,7 @@ optional arguments:
   -o, --overwrite       If this argument exists, overwrites existing log.md
                         file
   -f FILE, --file FILE  Specify a filename to store your log to
+  ```
 
 ### Requirements :
 
