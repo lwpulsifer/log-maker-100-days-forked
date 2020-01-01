@@ -8,6 +8,7 @@ parser.add_argument("date", nargs='?', default="",
                     help="Set your own starting date here, format : yyyy-mm-dd")
 parser.add_argument("-o", "--overwrite", action='store_true', help="If this argument exists, \
                     overwrites existing log.md file")
+parser.add_argument("-f", "--file", default="log.md", action='store', help="Specify a filename to store your log to")
 args = parser.parse_args()
 
 if args.date:
@@ -20,7 +21,7 @@ if args.overwrite:
 else:
     open_string = "x"
 
-with open("log.md", open_string) as f:
+with open(args.file, open_string) as f:
     f.write(f"""# 100 Days Of Code - Log
 
 *Main Commitment*:
