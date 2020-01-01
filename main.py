@@ -1,4 +1,5 @@
 import datetime
+import dateparser
 from argparse import ArgumentParser
 
 
@@ -8,7 +9,7 @@ parser.add_argument("date", nargs='?', default="",
 args = parser.parse_args()
 
 if args.date:
-    start_day = datetime.date.fromisoformat(args.date)
+    start_day = dateparser.parse(args.date)
 else:
     start_day = datetime.date.today()
 
@@ -42,7 +43,7 @@ End Date (without any breaks): {(start_day + datetime.timedelta(100)).strftime("
     f.write(f"\n[Or Jump Right To Conclusion!](#Conclusion)\n")
 
     if args.date:
-        start_day = datetime.date.fromisoformat(args.date)
+        start_day = dateparser.parse(args.date)
     else:
         start_day = datetime.date.today()
 
